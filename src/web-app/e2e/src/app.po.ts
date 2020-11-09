@@ -1,4 +1,4 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element, WebElementPromise } from 'protractor';
 
 export class AppPage {
   navigateTo(): Promise<unknown> {
@@ -6,6 +6,10 @@ export class AppPage {
   }
 
   getTitleText(): Promise<string> {
-    return element(by.css('h1')).getText() as Promise<string>;
+    return element(by.css('.title')).getText() as Promise<string>;
+  }
+
+  getMainContent(): WebElementPromise {
+    return element(by.css('router-outlet + *')).getWebElement();
   }
 }

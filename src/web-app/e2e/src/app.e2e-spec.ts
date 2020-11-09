@@ -8,10 +8,15 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display the app name', () => {
     page.navigateTo();
     expect(page.getTitleText()).toEqual('Kondor Notes');
   });
+
+  it('should display a welcome message', () => {
+    page.navigateTo();
+    expect(page.getMainContent().getText()).toContain('Welcome');
+  })
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
