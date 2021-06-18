@@ -18,6 +18,8 @@ services:
   # Back-end
   ruby:
     build: ./src/api
+    volumes:
+      - ./src/api/:/usr/src/app/
     environment:
       DATABASE_URL: postgres://kondor:secret-kondor@postgres
     ports:
