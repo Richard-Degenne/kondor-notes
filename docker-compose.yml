@@ -1,0 +1,15 @@
+---
+version: '3.8'
+
+services:
+  ##
+  # Front-end
+  node:
+    build: ./src/web-app
+    user: node
+    working_dir: /home/node/app
+    volumes:
+      - ./src/web-app/:/home/node/app/
+    ports:
+      - "127.0.0.1:4200:4200"
+    command: "npm start"
