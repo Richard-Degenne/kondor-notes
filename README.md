@@ -15,4 +15,5 @@ To run it, execute
 $ docker-compose up
 ```
 
-Once up, the application will be available at http://localhost:4200.
+Once up, the application will be available at http://localhost:4200 and the API
+at http://localhost:3000.

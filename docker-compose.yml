@@ -13,3 +13,20 @@ services:
     ports:
       - "127.0.0.1:4200:4200"
     command: "npm start"
+
+  ##
+  # Back-end
+  ruby:
+    build: ./src/api
+    environment:
+      DATABASE_URL: postgres://kondor:secret-kondor@postgres
+    ports:
+      - "127.0.0.1:3000:3000"
+    command: "bundle exec rails server --binding 0.0.0.0"
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: kondor
+      POSTGRES_PASSWORD: secret-kondor
+    ports:
+      - "127.0.0.1:5432:5432"
