@@ -23,6 +23,8 @@ group :development, :test do
   gem 'rubocop-rake'
   gem 'rubocop-rspec'
   gem 'simplecov', require: false
+  gem 'solargraph'
+  gem 'yard'
 end
 
 group :development do
