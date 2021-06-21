@@ -2,6 +2,6 @@
 
 Rails.application.routes.draw do
   get 'ping' => proc { |_env|
-    ['200', {}, 'pong']
+    ['200', {}, ['pong']]
   }
 end
