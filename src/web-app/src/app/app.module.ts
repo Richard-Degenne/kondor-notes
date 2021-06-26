@@ -12,17 +12,25 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './home/home.component';
+import { WorkbookListComponent } from './workbook-list/workbook-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiInjectables } from './api/api.injectables';
+import { ApiService } from './api/api.service';
+import { WorkbookListItemComponent } from './workbook-list-item/workbook-list-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
+    WorkbookListComponent,
+    WorkbookListItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
@@ -30,7 +38,10 @@ import { HomeComponent } from './home/home.component';
     MatIconModule,
     MatListModule
   ],
-  providers: [],
+  providers: [
+    ApiInjectables,
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
