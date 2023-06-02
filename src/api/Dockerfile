@@ -1,4 +1,4 @@
-FROM ruby:2.6.6
+FROM ruby:3.1
 
 RUN apt-get update -qq && apt-get install -y postgresql-client
 
@@ -7,7 +7,7 @@ RUN bundle config --global frozen 1
 
 WORKDIR /usr/src/app
 COPY Gemfile Gemfile.lock ./
-RUN bundle install
+RUN bundle install --production
 
 COPY . .
 
