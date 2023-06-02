@@ -21,8 +21,10 @@ group :development, :test do
   gem 'rspec-its'
   gem 'rspec-rails', '~> 5'
   gem 'rubocop'
+  gem 'rubocop-factory_bot'
   gem 'rubocop-performance'
-  gem 'rubocop-rails_config'
+  gem 'rubocop-rails'
+  # gem 'rubocop-rails_config'
   gem 'rubocop-rake'
   gem 'rubocop-rspec'
   gem 'simplecov', require: false

@@ -212,12 +212,6 @@ GEM
       rubocop (~> 1.41)
     rubocop-factory_bot (2.23.1)
       rubocop (~> 1.33)
-    rubocop-md (1.2.0)
-      rubocop (>= 1.0)
-    rubocop-minitest (0.31.0)
-      rubocop (>= 1.39, < 2.0)
-    rubocop-packaging (0.5.2)
-      rubocop (>= 1.33, < 2.0)
     rubocop-performance (1.18.0)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
@@ -225,15 +219,6 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
-    rubocop-rails_config (1.13.0)
-      railties (>= 5.0)
-      rubocop (>= 1.48.0)
-      rubocop-ast (>= 1.26.0)
-      rubocop-md
-      rubocop-minitest (~> 0.22)
-      rubocop-packaging (~> 0.5)
-      rubocop-performance (~> 1.11)
-      rubocop-rails (~> 2.0)
     rubocop-rake (0.6.0)
       rubocop (~> 1.0)
     rubocop-rspec (2.22.0)
@@ -302,8 +287,9 @@ DEPENDENCIES
   rspec-its
   rspec-rails (~> 5)
   rubocop
+  rubocop-factory_bot
   rubocop-performance
-  rubocop-rails_config
+  rubocop-rails
   rubocop-rake
   rubocop-rspec
   simplecov

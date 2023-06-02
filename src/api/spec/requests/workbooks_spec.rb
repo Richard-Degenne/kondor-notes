@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe '/workbooks', type: :request do
+describe '/workbooks' do
   describe 'GET /workbooks' do
     subject(:index) do
       get workbooks_url, headers: { 'Accept' => 'application/json' }

@@ -1,6 +1,8 @@
 ---
 require:
+  - rubocop-factory_bot
   - rubocop-performance
+  - rubocop-rails
   - rubocop-rake
   - rubocop-rspec
 
@@ -12,6 +14,3 @@ AllCops:
     - 'db/schema.rb'
   NewCops: enable
   TargetRubyVersion: 3.1
-
-Metrics/BlockLength:
-  IgnoredMethods: ["describe", "context"]

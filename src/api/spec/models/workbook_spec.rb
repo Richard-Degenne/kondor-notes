@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-describe Workbook, type: :model do
-  subject(:workbook) { build(:workbook, name: name) }
+describe Workbook do
+  subject(:workbook) { build(:workbook, name:) }
 
   let(:name) { 'My workbook' }
 
