@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "src/api"
+		},
+		{
+			"path": "src/web-app"
+		},
+		{
+			"path": ".",
+			"name": "project"
+		}
+	],
+	"extensions": {
+		"recommendations": [
+			"shardulm94.trailing-spaces"
+		]
+	},
+	"settings": {
+		"ruby.rubocop.useBundler": true,
+		"solargraph.useBundler": true,
+		"editor.rulers": [
+			80
+		]
+	}
+}
