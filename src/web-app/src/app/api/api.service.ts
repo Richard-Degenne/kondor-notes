@@ -10,26 +10,36 @@ import { map } from "rxjs/operators";
 })
 export class ApiService {
 
+  static readonly headers: HttpHeaders = new HttpHeaders({
+    'Accept': 'application/json'
+  })
+
   constructor(
     private http: HttpClient,
     @Inject(KONDOR_API_URL) private apiUrl: string
   ) { }
 
   getWorkbooks(): Observable<Workbook[]> {
-    const headers: HttpHeaders = new HttpHeaders({
-      'Accept': 'application/json'
-    })
-    let observable = this.http.get(
-      this.buildUrl('/workbooks'), { headers: headers, responseType: 'text' }
-    )
-    let workbooks = observable.pipe(
+    return this.get('/workbooks').pipe(
       map(json =>  JSON.parse(json)),
       map(data =>
         data.map((i: Workbook) => new Workbook(i.id, i.name, i.description))
       )
     )
+  }
 
-    return workbooks
+  getWorkbook(id: string): Observable<Workbook> {
+    return this.get('/workbooks/' + id).pipe(
+      map(json => JSON.parse(json)),
+      map(data => new Workbook(data.id, data.name, data.description))
+    )
+  }
+
+
+  private get(path: string) {
+    return this.http.get(
+      this.buildUrl(path), { headers: ApiService.headers, responseType: 'text' }
+    )
   }
 
   private buildUrl(path: string): string {

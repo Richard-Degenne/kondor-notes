@@ -19,8 +19,10 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span class="title">Kondor Notes</span>
+      <h1>Kondor Notes</h1>
     </mat-toolbar>
-    <router-outlet class="main-content"></router-outlet>
+    <section class="main-content">
+      <router-outlet></router-outlet>
+    </section>
   </mat-sidenav-content>
 </mat-sidenav-container>

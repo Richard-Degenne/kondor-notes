@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiInjectables } from './api/api.injectables';
 import { ApiService } from './api/api.service';
 import { WorkbookListItemComponent } from './workbook-list-item/workbook-list-item.component';
+import { WorkbookDetailComponent } from './workbook-detail/workbook-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { WorkbookListItemComponent } from './workbook-list-item/workbook-list-it
     MenuComponent,
     HomeComponent,
     WorkbookListComponent,
-    WorkbookListItemComponent
+    WorkbookListItemComponent,
+    WorkbookDetailComponent
   ],
   imports: [
     BrowserModule,

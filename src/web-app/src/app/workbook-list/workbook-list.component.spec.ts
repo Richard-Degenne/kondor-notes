@@ -18,7 +18,7 @@ describe('WorkbookListComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ WorkbookListComponent, WorkbookListItemComponent ],
       providers: [
-        { provide: ApiService, useValue: mockApiService}
+        { provide: ApiService, useValue: mockApiService }
       ]
     })
     .compileComponents();

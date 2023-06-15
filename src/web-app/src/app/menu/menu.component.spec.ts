@@ -46,7 +46,7 @@ describe('MenuComponent', () => {
   });
 
   it('should render the title', () => {
-    expect(compiled.querySelector('.sidenav-content span').textContent)
+    expect(compiled.querySelector('.sidenav-content h1').textContent)
       .toContain('Kondor Notes')
   });
 });

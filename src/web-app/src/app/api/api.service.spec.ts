@@ -25,35 +25,36 @@ describe("ApiService", () => {
     expect(apiService).toBeTruthy()
   })
 
-  it('should retrieve workbooks', () => {
-    const responseBody = '[{"id": 42, "name": "Name", "description": "Description"}]'
-    apiService.getWorkbooks().subscribe(workbooks =>
-      expect(workbooks.length).toBe(1)
-    )
+  describe('#getWorkbooks', () => {
+    it('should retrieve workbooks', () => {
+      const responseBody = '[{"id": 42, "name": "Name", "description": "Description"}]'
+      apiService.getWorkbooks().subscribe(workbooks =>
+        expect(workbooks.length).toBe(1)
+      )
 
-    const httpStub = httpTestingController.expectOne("http://localhost:3000/workbooks")
-    expect(httpStub.request.method).toEqual('GET')
-    httpStub.flush(responseBody)
+      const httpStub = httpTestingController.expectOne("http://localhost:3000/workbooks")
+      expect(httpStub.request.method).toEqual('GET')
+      httpStub.flush(responseBody)
 
-    httpTestingController.verify()
+      httpTestingController.verify()
+    })
   })
-  // describe("getWorkbooks", () => {
-  //   it("retrieves the workbooks", inject(
-  //     [ApiService, HttpTestingController],
-  //     fakeAsync((apiService, mockBackend) => {
-  //       var response;
-  //       mockBackend.connections.subscribe(c => {
-  //         expect(c.request.url).toBe(
-  //           "http://localhost:3000/workbooks"
-  //         )
-  //         c.mockRespond(new Response('[]'))
-  //       })
 
-  //       apiService.getWorkbooks().subscribe((r: Workbook[]) => response = r)
-  //       tick()
+  describe('#getWorkbook', () => {
+    it('should retrieve a workbook', () => {
+      const responseBody = '{"id": 42, "name": "Name", "description": "Description"}'
+      apiService.getWorkbook('42').subscribe({next: workbook => {
+        expect(workbook.id).toBe(42);
+        expect(workbook.name).toBe("Name")
+        expect(workbook.description).toBe("Description")
+      }
+    })
 
-  //       expect(response.toBe([]))
-  //     })
-  //   ))
-  // })
+      const httpStub = httpTestingController.expectOne("http://localhost:3000/workbooks/42")
+      expect(httpStub.request.method).toEqual('GET')
+      httpStub.flush(responseBody)
+
+      httpTestingController.verify()
+    })
+  })
 })
